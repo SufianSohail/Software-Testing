@@ -46,5 +46,9 @@ If you are logged in as an admin a button in navbar will show up which gives you
 
 ## Technologies used in testing of E-Commerce Website:
 
-- #### Notion for test cases management and resource handling
+- #### Notion ###### for test cases management and resource handling
+- #### Cypress ###### for API, UI/UX and Unit Testing
+- #### Lighthouse and Cypress ###### for Performance Testing
+- #### Linter ( eslint and prettier ) ###### for Code Quality, Formatting and Style
+- #### Eslint Security Plugin ####### for Security checking
 
