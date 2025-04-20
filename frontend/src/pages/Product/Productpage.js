@@ -4,7 +4,11 @@ import {useDispatch, useSelector } from 'react-redux'
 import { Helmet } from 'react-helmet';
 
 import {listProductDetails,createproductReview} from '../../actions/productActions'
-import {IoLogoFacebook,AiFillTwitterCircle,AiFillInstagram,AiFillShop,MdDoNotDisturb}  from "react-icons/all"
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { AiFillShop } from 'react-icons/ai';
+import { MdDoNotDisturb } from 'react-icons/md';
+
+
 import { Image,Select,Button, FormControl, FormLabel, Textarea } from "@chakra-ui/react"
 import HashLoader from "react-spinners/HashLoader";
 import {PRODUCT_CREATE_RESET, PRODUCT_CREATE_REVIEW_RESET} from '../../constants/productConstants'
@@ -176,15 +180,15 @@ const submithanlder = () =>{
           <div className = "social-links">
             <p>Share On: </p>
             <Link className = 'social' to = "#">
-              <i> <IoLogoFacebook size='20'/></i>
-            </Link>
+              <i> <FaFacebookF size='20'/></i>
+           </Link>
             <Link className = 'social' href = "#">
-              <i><AiFillTwitterCircle size='20'/></i>
-            </Link>
+              <i><FaTwitter size='20'/></i>
+           </Link>
             <Link  className = 'social' href = "#">
-              <i><AiFillInstagram size='20'/> </i>
-            </Link>
-          </div>
+              <i><FaInstagram size='20'/> </i>
+           </Link>
+           </div>
         </div>
       </div>
 

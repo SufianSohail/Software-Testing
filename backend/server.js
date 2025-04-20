@@ -1,21 +1,24 @@
 import path from "path";
 import express from "express";
 import dotenv from "dotenv";
-import connectDB from "./config/db.js";
 import morgan from "morgan";
 import userRoutes from "./routes/userRoutes.js";
+import http from 'http';
 import orderRoutes from "./routes/orderRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
-
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
-connectDB();
+import connectDB from "./config/db.js";
+
+if (process.env.NODE_ENV === "development") {
+  connectDB();
+}
 
 const app = express();
 
-if (process.env.NODE_ENV === "developement") {
+if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
@@ -44,12 +47,16 @@ if (process.env.NODE_ENV === "production") {
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-app.listen(
-  PORT,
-  console.log(
-    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
-  )
-);
+const PORT = process.env.PORT || 5000; 
+const server = http.createServer(app);
+server.maxHeaderSize = 16384; // 16KB
 
-//runingin
+
+server.listen(
+    PORT,
+    console.log(
+        `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
+        .yellow.bold
+        .concat(` (NODE_ENV: ${process.env.NODE_ENV})`)
+    )
+);

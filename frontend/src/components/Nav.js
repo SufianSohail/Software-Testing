@@ -2,11 +2,13 @@ import React , {useRef,useState,useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import { Route } from 'react-router-dom';
 import {Link, NavLink } from 'react-router-dom'
-import { Button, Input,InputGroup,InputRightElement, Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react"
-import {RiShoppingCart2Line,IoCloseOutline,MdSearch,BsArrowRightShort,MdKeyboardArrowRight,IoLogOutOutline,CgProfile, IoChevronDownCircleOutline, IoMdArrowDropdown} from "react-icons/all"
-
-import {logout} from '../actions/userActions'
-import { keyword } from 'color-convert'
+import { Button, InputGroup,InputRightElement, Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react"
+import { RiShoppingCart2Line } from "react-icons/ri";
+import { IoIosLogOut, IoMdArrowDropdown } from "react-icons/io";
+import { MdSearch, MdKeyboardArrowRight } from "react-icons/md";
+import { BsArrowRightShort } from 'react-icons/bs';
+import { CgProfile } from 'react-icons/cg';
+import { logout } from "../actions/userActions";
 import Searchnav from './Searchnav';
 
  const Nav = ({history}) => {
@@ -40,13 +42,6 @@ import Searchnav from './Searchnav';
             searchRef.current.classList.toggle('searchActive')
             searchRef.current.style.animation = 'moving 0.3s ease both 0.3s'
         }  
-        const onDelSeacrh =  () =>{
-            
-            setShowSearchIc(!showSearchIc) //true
-            searchRef.current.classList.toggle('searchActive')
-
-        }
-
         const onBurgActive = () =>{
             //Toggle Nav
 
@@ -85,7 +80,7 @@ import Searchnav from './Searchnav';
             return () => {
                 setincart(0)
             }
-        },[cart])
+        },[cart, cartItems.length])
 
 
         const dispatch= useDispatch()
@@ -128,7 +123,7 @@ import Searchnav from './Searchnav';
                  </Link>
 
                             {userInfo ? (<div className="ic_sett_dis"><Link to="/profile"><CgProfile size="25" className="settingIcon"/></Link>
-                                <IoLogOutOutline size='28' className="displayIcon" onClick={logoutHandler}/>
+                                <IoIosLogOut size='28' className="displayIcon" onClick={logoutHandler}/>
                                 </div>
                                 
                             ) : <Link to='/login' > <div className='signin' onMouseOver={ () => setSignin(!signin)}  onMouseOut={ ()=> setSignin(!signin) }  > Sign in 
@@ -166,4 +161,4 @@ import Searchnav from './Searchnav';
        </nav>
     )                   
 }
-export default Nav                      
+export default Nav;                      

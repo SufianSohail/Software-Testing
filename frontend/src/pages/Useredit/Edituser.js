@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom'
 import {Form, Image} from 'react-bootstrap'
 import {useDispatch, useSelector} from 'react-redux'
 import {getUserDetails,updateUser} from '../../actions/userActions'
-import { AiOutlineUser, HiOutlineMail, IoIosArrowDown } from 'react-icons/all';
-import HashLoader from "react-spinners/HashLoader";
+import { AiOutlineUser } from 'react-icons/ai';
+import { HiOutlineMail } from 'react-icons/hi';
+import { IoIosArrowDown } from 'react-icons/io';import { HashLoader } from "react-spinners";
 import './Edituser.css'
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/input'
 import { Checkbox } from '@chakra-ui/checkbox'

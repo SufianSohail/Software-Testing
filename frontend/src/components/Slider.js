@@ -1,5 +1,5 @@
 import {React,useEffect,useState}  from 'react'
-import {IoIosArrowForward,IoIosArrowBack} from 'react-icons/all'
+import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import ShopNowBtn from './ShopNowBtn'
 const Slider = () => {
@@ -63,9 +63,9 @@ const Slider = () => {
  
             })}
             <IoIosArrowForward className ='next' size ='32' onClick = {nextslide}/>
-            <IoIosArrowBack className = 'prev' size ='32' onClick = {prevslide}/>
+            <IoIosArrowBack className='prev' size='32' onClick={prevslide} />
         </div>
     )
 }
- 
+
 export default Slider

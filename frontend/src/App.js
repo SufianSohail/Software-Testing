@@ -31,7 +31,7 @@ import Orders from './pages/Orders/Orders'
     setLoading(true)
     setTimeout( ()=> {
       setLoading(false)
-    },3000)
+    },5000)
 
   }, [])
 

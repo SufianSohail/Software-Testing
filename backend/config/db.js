@@ -5,9 +5,8 @@ import colors from 'colors'
 const connectDB = async () => {
     try{
         const conn = await mongose.connect(process.env.MONGO_URI,{
-            useUnifiedTopology: true,
-            useNewUrlParser: true,
-            useCreateIndex: true
+            useUnifiedTopology: true, // Corrected typo here: useUnifiedTopology
+            useNewUrlParser: true
         })
         console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline)
     } catch (error) {

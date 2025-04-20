@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 
 import {useDispatch, useSelector} from 'react-redux'
-import { IoMdDoneAll } from 'react-icons/all';
+import { IoMdDoneAll } from 'react-icons/io';
 import HashLoader from "react-spinners/HashLoader";
 import { getOrderDetails, payOrder,deliverOrder } from "../../actions/orderActions";
 import './Order.css'
@@ -154,8 +154,7 @@ const Order = ({match,history}) => {
                             </>
                         )}
                         {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered &&(
-                            <Button   height="40px" width = "200px"
-                            size = "lg" onClick = {deliverhandler} leftIcon = {<IoMdDoneAll size = '16' />} colorScheme ='blue' size="xs" >DELIVERED</Button>
+                            <Button   height="40px" width = "200px" onClick = {deliverhandler} leftIcon = {<IoMdDoneAll size = '16' />} colorScheme ='blue' size="xs" >DELIVERED</Button>
                         )}
 
                         </div>

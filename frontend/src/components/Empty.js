@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
 import {ReactComponent as EmptyS} from "./Empty.svg"
 import { Link } from "react-router-dom";
-import { RiArrowRightSLine  , TiArrowRight,BsArrowBarRight} from "react-icons/all";
-
+import { RiArrowRightSLine } from "react-icons/ri";
+import { BsArrowBarRight } from "react-icons/bs";
 
 const Empty = () => {
     const [arrow, setarrow] = useState(false)
@@ -16,7 +16,7 @@ const Empty = () => {
              
             <Link to = '/shop' className ='goshop' onMouseOver = {()=>{setarrow(true)}} onMouseLeave = {()=>{setarrow(false)}}>
             Go Shop
-            {!arrow ? <RiArrowRightSLine className = 'arrow' /> : <BsArrowBarRight className = 'arrow'/> }
+            {!arrow ? <RiArrowRightSLine className = 'arrow' /> : <BsArrowBarRight className = 'arrow'/>}
             </Link>
             </div>
 
